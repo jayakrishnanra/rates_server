@@ -12,7 +12,6 @@ deploy:
         access_key_id: AKIAJ4XZHIMNKP3WGGHQ
         secret_access_key: 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
         bucket: "elasticbeanstalk-us-west-2-511118469329"
-        local_dir: dpl_cd_upload
         skip_cleanup: true
         on: &2
           repo: jayakrishnanra/rates_server

@@ -17,7 +17,7 @@ deploy:
         local_dir: dpl_cd_upload
         skip_cleanup: true
         on: &2
-          repo: travis-ci/jayakrishnanra
+          repo: jayakrishnanra/rates_server
       - provider: codedeploy
         access_key_id: "AKIAJ7TWOCSOJEYEFHBQ"
         secret_access_key: "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"

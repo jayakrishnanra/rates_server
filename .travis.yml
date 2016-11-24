@@ -6,8 +6,6 @@ jdk:
 before_install:
     - chmod +x install_locally.sh
     - ./install_locally.sh
-    - mkdir -p dpl_cd_upload
-    - cp /target/rates_server-1.0-SNAPSHOT.war dpl_cd_upload/rates_server.war
 
 deploy:
       - provider: s3
@@ -21,7 +19,7 @@ deploy:
       - provider: codedeploy
         access_key_id: "AKIAJ7TWOCSOJEYEFHBQ"
         secret_access_key: "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"
-        key: dpl_cd_upload/rates_server.war
+        key: rates_server-1.0-SNAPSHOT.war
         bundle_type: war
         application: rates_server
         bucket: "elasticbeanstalk-us-west-2-511118469329"

@@ -12,13 +12,13 @@ before_deploy:
     - ls -ltr
     - cd target
     - ls -ltr
-    - chmod 777 /target/rates_server-1.0-SNAPSHOT.war
-    - mv /target/rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
+    - chmod 777 target/rates_server-1.0-SNAPSHOT.war
+    - mv target/rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
 
 deploy:
   - provider: codedeploy
     access_key_id: AKIAJ7TWOCSOJEYEFHBQ
-    key: /target/rates_server-1.0-SNAPSHOT.zip
+    key: target/rates_server-1.0-SNAPSHOT.zip
     bundle_type: zip
     application: rates_server
     bucket: elasticbeanstalk-us-west-2-511118469329

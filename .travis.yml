@@ -1,27 +1,27 @@
 sudo: required
 language: java
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 before_install:
-    - chmod +x install_locally.sh
-    - ./install_locally.sh
-
+- chmod +x install_locally.sh
+- "./install_locally.sh"
 deploy:
-      - provider: s3
-        access_key_id: AKIAJ4XZHIMNKP3WGGHQ
-        secret_access_key: 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
-        bucket: "elasticbeanstalk-us-west-2-511118469329"
-        skip_cleanup: true
-        on: &2
-          repo: jayakrishnanra/rates_server
-      - provider: codedeploy
-        access_key_id: "AKIAJ7TWOCSOJEYEFHBQ"
-        secret_access_key: "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"
-        key: rates_server-1.0-SNAPSHOT.war
-        bundle_type: war
-        application: rates_server
-        bucket: "elasticbeanstalk-us-west-2-511118469329"
-        deployment_group: rates_server_grp
-        wait-until-deployed: true
-        region: us-east-1
+  matrix:
+  - provider: s3
+    access_key_id: AKIAJ4XZHIMNKP3WGGHQ
+    secret_access_key: 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
+    bucket: elasticbeanstalk-us-west-2-511118469329
+    skip_cleanup: true
+    on:
+      repo: jayakrishnanra/rates_server
+  - provider: codedeploy
+    access_key_id: AKIAJ7TWOCSOJEYEFHBQ
+    key: rates_server-1.0-SNAPSHOT.war
+    bundle_type: war
+    application: rates_server
+    bucket: elasticbeanstalk-us-west-2-511118469329
+    deployment_group: rates_server_grp
+    wait-until-deployed: true
+    region: us-east-1
+    secret_access_key:
+      secure: V3rTQYAwu9i5twJyF8GUaYt4R0cwiY45naxQ6YnjpS0bpqk/crHDP7imYrziaHP9SWnztm60OtXHBU7CfRHrVQhUCczU31HKSDlHQ4ek2EmTwHiG8zlcng0CO87GxG5PHSql5o7n1bqaR2FLnEujbLTQ8hzRECS6uJuGa5VFyt2x3bp3zddv4aaux2P0ReFtt1pYeFqBv1krN6hqxKBjTxP7J4GupYH/3KKoWYKTLBKONYuN/oTXiHbIfAnUuG7y6W5Q5Y0NdbIyZuLaCJpFXLmVzYFYuOsP/ddaCLEflJATCJcp4EpT8Ajq0HVAGgGblvty4Qi9TjmkrBTNUsKCYmmwEpwQTeSV99+dOP1u7k0CjHJmxyfVfTNTbNKn6gPusy2aMMCaNOh1Edt/p4dp5m9/NsKsPkRSon/66k3fHYlLZl22X5XKVda9IcQHn7THBMkS3UI/J7nYKmZqpX+AQ1mCW/ln8+YS+hQTUoBMVCT4KXor5lQb0AQ2nqK7Kz0OgqCJx1pBOl5nj7+I9BxFiNzVZsrV1/OrSX5oedUBOHwmAksTwlSXFTpLKzCnz7M9fKz0+P0Ap4q33AlAViLaQUuELMY+ijvKrM6BJVQnn3VrUFTuuy9ET/byFAyjv/9MxyJlXddO411uKIxLGLyPLsbgUdbAy1I5gv6siekPpWc=

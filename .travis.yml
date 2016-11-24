@@ -12,6 +12,7 @@ before_deploy:
     - ls -ltr
     - cd target
     - ls -ltr
+    - chmod 777 /target/rates_server-1.0-SNAPSHOT.war
     - mv /target/rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
 
 deploy:

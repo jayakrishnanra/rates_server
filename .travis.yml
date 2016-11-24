@@ -8,6 +8,8 @@ before_install:
     - "./install_locally.sh"
 
 before_deploy:
+    pwd
+    ls -ltr
     mv rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
 
 deploy:

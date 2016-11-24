@@ -2,9 +2,14 @@ sudo: required
 language: java
 jdk:
     - oraclejdk8
+
 before_install:
     - chmod +x install_locally.sh
     - "./install_locally.sh"
+
+before_deploy:
+    mv rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
+
 deploy:
   - provider: codedeploy
     access_key_id: AKIAJ7TWOCSOJEYEFHBQ

@@ -7,7 +7,7 @@ before_install:
     - chmod +x install_locally.sh
     - ./install_locally.sh
     - mkdir -p dpl_cd_upload
-    - mv target/rates_server-1.0-SNAPSHOT.war dpl_cd_upload/rates_server.war
+    - cp /target/rates_server-1.0-SNAPSHOT.war dpl_cd_upload/rates_server.war
 
 deploy:
       - provider: s3

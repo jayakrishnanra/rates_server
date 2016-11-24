@@ -10,13 +10,15 @@ before_install:
 before_deploy:
     - pwd
     - ls -ltr
-    - mv rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
+    - cd target
+    - ls -ltr
+    - mv /target/rates_server-1.0-SNAPSHOT.war rates_server-1.0-SNAPSHOT.zip
 
 deploy:
   - provider: codedeploy
     access_key_id: AKIAJ7TWOCSOJEYEFHBQ
-    key: rates_server-1.0-SNAPSHOT.war
-    bundle_type: war
+    key: /target/rates_server-1.0-SNAPSHOT.zip
+    bundle_type: zip
     application: rates_server
     bucket: elasticbeanstalk-us-west-2-511118469329
     deployment_group: rates_server_grp

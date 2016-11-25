@@ -17,7 +17,7 @@ deploy:
   - provider: codedeploy
     skip_cleanup: true
     access_key_id: AKIAJ7TWOCSOJEYEFHBQ
-    key: rates_server-1.0-SNAPSHOT.zip
+    key: target/rates_server-1.0-SNAPSHOT.zip
     bundle_type: zip
     application: rates_server
     bucket: elasticbeanstalk-us-west-2-511118469329

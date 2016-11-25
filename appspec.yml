@@ -1,5 +1,5 @@
 version: 0.0
 os: linux
 files:
-  - source: /target/rates_server-1.0-SNAPSHOT.war
+  - source: target/rates_server-1.0-SNAPSHOT.war
   - destination: /tmp/codedeploy-deployment-staging-area/

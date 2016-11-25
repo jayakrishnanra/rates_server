@@ -20,7 +20,6 @@ deploy:
     key: target/rates_server-1.0-SNAPSHOT.zip
     bundle_type: zip
     application: rates_server
-    bucket: elasticbeanstalk-us-west-2-511118469329
     deployment_group: rates_server_grp
     wait-until-deployed: true
     secret_access_key:

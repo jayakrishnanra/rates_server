@@ -7,7 +7,7 @@ before_install:
     - chmod +x install_locally.sh
     - "./install_locally.sh"
 
-after_install:
+after_success:
     - pwd
     - ls -ltr
     - ls -ltr target/

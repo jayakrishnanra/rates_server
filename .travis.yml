@@ -18,7 +18,7 @@ deploy:
   - provider: codedeploy
     skip_cleanup: true
     access_key_id: AKIAJ7TWOCSOJEYEFHBQ
-    file: target/rates_server-1.0-SNAPSHOT.zip
+    file: rates_server-1.0-SNAPSHOT.zip
     bundle_type: zip
     application: rates_server
     deployment_group: rates_server_grp

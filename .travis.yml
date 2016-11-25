@@ -32,3 +32,6 @@ deploy:
     deployment_group: rates_server_grp
     skip_cleanup: true
     wait-until-deployed: true
+
+addons:
+  artifacts: true

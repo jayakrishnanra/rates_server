@@ -16,7 +16,6 @@ after_success:
 before_deploy:
     - pwd
     - ls -ltr
-    - ls -ltr final/
 
 deploy:
   - provider: codedeploy

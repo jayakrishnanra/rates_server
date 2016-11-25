@@ -19,13 +19,13 @@ before_deploy:
 
 deploy:
   - provider: codedeploy
-    access_key_id: ${key_id}
+    access_key_id: $key_id
     secret_access_key:
-      secure: ${secure_access_key}
+      secure: $secure_access_key
     bundle: target/rates_server-1.0-SNAPSHOT.war
     bundle_type: zip
     application_name: rates_server
-    deployment_group: ${deployment_grp}
+    deployment_group: $deployment_grp
     skip_cleanup: true
     wait-until-deployed: true
 

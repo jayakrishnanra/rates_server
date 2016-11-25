@@ -4,6 +4,8 @@ import com.eprotech.rates.server.domain.Rate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +15,7 @@ import java.util.List;
 @SpringBootApplication
 @RestController
 @RequestMapping(value = "/rs/fx/")
-public class Application implements ErrorController{
+public class Application extends SpringBootServletInitializer implements ErrorController{
 
     private static final String ERROR_PATH = "/error";
     public static final Main MAIN = new Main();
@@ -30,6 +32,11 @@ public class Application implements ErrorController{
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
     }
 
     @Override

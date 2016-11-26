@@ -22,8 +22,7 @@ before_deploy:
 deploy:
   - provider: codedeploy
     access_key_id: $key_id
-    secret_access_key:
-      secure: $secure_access_key
+    secret_access_key: $secure_access_key
     bundle: target/rates_server-1.0-SNAPSHOT.war
     bundle_type: zip
     application_name: rates_server

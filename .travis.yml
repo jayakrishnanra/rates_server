@@ -16,13 +16,10 @@ after_success:
 before_deploy:
     - pwd
     - ls -ltr
-    - echo $key_id
-    - echo $secure_access_key
 
 deploy:
   - provider: codedeploy
-    access_key_id:
-        secure: $key_id
+    access_key_id: $key_id
     secret_access_key: $secure_access_key
     bundle: target/rates_server-1.0-SNAPSHOT.war
     bundle_type: zip

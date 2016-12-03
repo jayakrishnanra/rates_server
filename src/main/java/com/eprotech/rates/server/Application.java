@@ -6,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -20,13 +23,13 @@ public class Application extends SpringBootServletInitializer implements ErrorCo
     private static final String ERROR_PATH = "/error";
     public static final Main MAIN = new Main();
 
-    @RequestMapping(method = RequestMethod.GET, value = ERROR_PATH)
+    @RequestMapping(method = RequestMethod.GET, value = ERROR_PATH )
     public String error() {
         return "Sorry, we don't recognize your request.";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "hello")
-    public String home() {
+    public String hello() {
         return "Hello  World 1";
     }
 
@@ -49,6 +52,7 @@ public class Application extends SpringBootServletInitializer implements ErrorCo
 
     @PostConstruct
     private void init() {
+        System.out.println("init");
         try {
             MAIN.start();
         } catch (Exception e) {

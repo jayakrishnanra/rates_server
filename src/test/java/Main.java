@@ -9,7 +9,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Created by merc on 11/11/16.

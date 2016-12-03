@@ -1,2 +1,8 @@
 .iml
 .idea
+target/classes
+target/gen*
+target/mav*
+target/test*
+target/rates_server-1.0-SNAPSHOT
+target/rates_server-1.0-SNAPSHOT.war.original
